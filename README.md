@@ -1,2 +1,2 @@
-# -Streamer.bot-Actions
+# Streamer.bot-Actions
 StreamerBot Actions of various utility.
