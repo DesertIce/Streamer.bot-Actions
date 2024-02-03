@@ -1,6 +1,3 @@
-# Streamer.bot-Actions
-Streamer.Bot Actions of various utility.
-
 # To Import an action
 1. Open the relevant action file (.sb)
 2. Click Raw
