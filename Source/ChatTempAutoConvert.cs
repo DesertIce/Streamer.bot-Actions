@@ -17,7 +17,7 @@ public class CPHInline
 		var regexMatchValue = args.ContainsKey("match[0]") ? args["match[0]"]?.ToString()?.ToUpper() : string.Empty;
 		if(!string.IsNullOrWhiteSpace(regexMatchValue))
 		{
-			var degreeInput = regexMatchValue.Last();
+			var degreeInput = regexMatchValue.ToUpper().Last();
 			var numericString = regexMatchValue.TrimEnd('C').TrimEnd('F').TrimEnd();
 			if(double.TryParse(numericString, out var degreeDouble))
 			{
