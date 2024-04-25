@@ -1,0 +1,7 @@
+{
+    "requestType": "SetInputMute",
+    "requestData": {
+        "inputName": "Mic/Aux",
+        "inputMuted": true
+    }
+}
