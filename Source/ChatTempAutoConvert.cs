@@ -8,16 +8,16 @@ public class CPHInline
 		string ConvertTempAndFormat(char degreeType, double degrees)	
 			=> degreeType switch
 			{
-					'F' => $"{FahrenheitToCelsius(degrees)}C",
-					'C' => $"{CelsiusToFahrenheit(degrees)}F",
+					'F' => $"{FahrenheitToCelsius(degrees)}°C",
+					'C' => $"{CelsiusToFahrenheit(degrees)}°F",
 					_ => string.Empty
 			};
 		
 		
-		var regexMatchValue = args.ContainsKey("match[0]") ? args["match[0]"]?.ToString()?.ToUpper() : string.Empty;
+		var regexMatchValue = args.ContainsKey("match[0]") ? args["match[0]"]?.ToString()?.ToUpper()?.Replace("°", string.Empty) : string.Empty;
 		if(!string.IsNullOrWhiteSpace(regexMatchValue))
 		{
-			var degreeInput = regexMatchValue.ToUpper().Last();
+			var degreeInput = regexMatchValue.Last();
 			var numericString = regexMatchValue.TrimEnd('C').TrimEnd('F').TrimEnd();
 			if(double.TryParse(numericString, out var degreeDouble))
 			{
