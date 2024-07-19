@@ -5,7 +5,7 @@ public class CPHInline
 {
 	public bool Execute()
 	{		
-		string ConvertTempAndFormat(char degreeType, double degrees)	
+		string ConvertTempAndFormat(char degreeType, decimal degrees)	
 			=> degreeType switch
 			{
 					'F' => $"{FahrenheitToCelsius(degrees)}°C",
@@ -19,7 +19,7 @@ public class CPHInline
 		{
 			var degreeInput = regexMatchValue.Last();
 			var numericString = regexMatchValue.TrimEnd('C').TrimEnd('F').TrimEnd();
-			if(double.TryParse(numericString, out var degreeDouble))
+			if(decimal.TryParse(numericString, out var degreeDouble))
 			{
 				var convertedOutput = ConvertTempAndFormat(degreeInput, degreeDouble);
 				if(!string.IsNullOrWhiteSpace(convertedOutput))
@@ -28,7 +28,7 @@ public class CPHInline
 					CPH.LogWarn("Something failed in the conversion");
 			}
 			else
-				CPH.LogWarn($"Parsing of {numericString} to double failed");
+				CPH.LogWarn($"Parsing of {numericString} failed");
 		}
 		else
 			CPH.LogWarn("Command triggered, but no match argument");
@@ -36,9 +36,9 @@ public class CPHInline
 		return true;
 	}
 
-	private double FahrenheitToCelsius(double fahrenheit)
+	private decimal FahrenheitToCelsius(decimal fahrenheit)
 		=> Math.Round((fahrenheit - 32) * 5/9, 1);
 
-	private double CelsiusToFahrenheit(double celsius)
+	private decimal CelsiusToFahrenheit(decimal celsius)
 		=> Math.Round((celsius * 9) / 5 + 32, 1);
 }
