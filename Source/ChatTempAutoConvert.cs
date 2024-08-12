@@ -23,7 +23,7 @@ public class CPHInline
 			{
 				var convertedOutput = ConvertTempAndFormat(degreeInput, degreeDouble);
 				if(!string.IsNullOrWhiteSpace(convertedOutput))
-					CPH.SendAction(convertedOutput);
+					CPH.SendAction($"{regexMatchValue} is {convertedOutput}");
 				else
 					CPH.LogWarn("Something failed in the conversion");
 			}
