@@ -10,7 +10,6 @@ public class CPHInline
 			
 		if(CPH.TryGetArg<string>("reply.msgBody", out var replymsgBody) && !string.IsNullOrWhiteSpace(replymsgBody))
 		{	
-			replymsgBody = replymsgBody.Replace("\\s", " ");
 			replymsgBody = string.Join("",  replymsgBody.Select(c => {
 				if(char.IsLetter(c))
 				{
