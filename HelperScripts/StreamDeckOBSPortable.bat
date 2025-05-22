@@ -16,3 +16,4 @@ SET PortableLocalized="%PortableRoot%\data\obs-plugins\StreamDeckPlugin\"
 xcopy "%InstallerRoot%\StreamDeckPlugin\data\StreamDeckPluginQt6.dll" %PortableLocalized% /Y
 xcopy "%InstallerRoot%\StreamDeckPlugin\data\StreamDeckPluginQt6.pdb" %PortableLocalized% /Y
 xcopy "%InstallerRoot%\StreamDeckPlugin\data\locale\" %PortableLocalized%\locale\ /E /Y
+pause
